@@ -20,7 +20,7 @@ export const SECTIONS: Section[] = [
       { title: 'Mail Booking Report 2025-26', url: 'https://docs.google.com/spreadsheets/d/1D_d3iwih0aqEBLD1JQVZr1GUtqtsCQryPT-WoxtCfrc/edit?gid=0#gid=0', type: 'sheet' },
       { title: 'Mail Booking Dashboard 2025-26', url: 'https://mailoperation2025-26.edgeone.app/', type: 'dashboard' },
       { title: 'Mail Booking Report 2026-27', url: 'https://docs.google.com/spreadsheets/d/15mP3CzQ6M9irA8XTj1I3k2FeIwzpzU6HNxsrUsHwiTA/edit?gid=0#gid=0', type: 'sheet' },
-      { title: 'Mail Booking Dashboard 2026-2027', url: 'https://maildashboard.vercel.app/', type: 'dashboard' },
+      { title: 'Mail Booking Dashboard 2026-2027', url: 'https://69ec8349bd5d658a87c1e025--tourmaline-empanada-ba56fe.netlify.app/', type: 'dashboard' },
     ],
   },
   {
