@@ -68,26 +68,33 @@ export default function App() {
       {/* Header */}
       <header className="bg-[#D41217] text-white shadow-lg sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <div className="flex items-center gap-3">
-              <button 
-                onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-                className="lg:hidden p-2 rounded-md hover:bg-red-700 transition-colors"
-              >
-                {isSidebarOpen ? <X size={24} /> : <Menu size={24} />}
-              </button>
-              <div className="flex items-center gap-2">
-                <div className="w-10 h-10 bg-[#FFD700] rounded-full flex items-center justify-center shadow-inner">
-                  <Mail className="text-[#D41217]" size={24} />
-                </div>
-                <div>
-                  <h1 className="text-xl font-bold tracking-tight leading-none">Mail Branch</h1>
-                  <p className="text-[10px] uppercase tracking-widest text-red-100 font-medium">India Post Portal</p>
+          <div className="flex justify-between items-center h-20 sm:h-24 py-2">
+            <div className="flex items-center gap-4">
+              <img 
+                src="https://upload.wikimedia.org/wikipedia/commons/5/55/Emblem_of_India.svg" 
+                alt="Emblem of India" 
+                className="h-12 sm:h-16 w-auto filter brightness-0 invert" 
+              />
+              <div className="flex items-center gap-3">
+                <button 
+                  onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+                  className="lg:hidden p-2 rounded-md hover:bg-red-700 transition-colors"
+                >
+                  {isSidebarOpen ? <X size={24} /> : <Menu size={24} />}
+                </button>
+                <div className="flex items-center gap-2">
+                  <div className="w-10 h-10 bg-[#FFD700] rounded-full flex items-center justify-center shadow-inner">
+                    <Mail className="text-[#D41217]" size={24} />
+                  </div>
+                  <div>
+                    <h1 className="text-xl sm:text-2xl font-bold tracking-tight leading-none uppercase">Mail Branch</h1>
+                    <p className="text-[10px] sm:text-[12px] uppercase tracking-widest text-red-100 font-medium">India Post Portal</p>
+                  </div>
                 </div>
               </div>
             </div>
 
-            <div className="hidden md:flex flex-1 max-w-md mx-8">
+            <div className="hidden lg:flex flex-1 max-w-sm mx-4">
               <div className="relative w-full">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                   <Search className="h-4 w-4 text-red-200" />
@@ -95,7 +102,7 @@ export default function App() {
                 <input
                   type="text"
                   placeholder="Search resources..."
-                  className="block w-full pl-10 pr-3 py-2 border border-transparent rounded-full leading-5 bg-red-800 text-white placeholder-red-300 focus:outline-none focus:bg-white focus:text-gray-900 sm:text-sm transition-all"
+                  className="block w-full pl-10 pr-3 py-2 border border-transparent rounded-lg leading-5 bg-red-800 text-white placeholder-red-300 focus:outline-none focus:bg-white focus:text-gray-900 sm:text-sm transition-all shadow-inner"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                 />
@@ -104,12 +111,14 @@ export default function App() {
 
             <div className="flex items-center gap-4">
               <div className="hidden sm:block text-right">
-                <p className="text-xs font-medium text-red-100">Welcome</p>
-                <p className="text-sm font-bold">Mail Branch Admin</p>
+                <p className="text-[10px] font-medium text-red-100 uppercase tracking-tighter">Department of Posts</p>
+                <p className="text-sm font-bold truncate max-w-[120px]">DO Dhenkanal</p>
               </div>
-              <div className="w-8 h-8 rounded-full bg-red-800 border border-red-600 flex items-center justify-center">
-                <span className="text-xs font-bold">MB</span>
-              </div>
+              <img 
+                src="https://upload.wikimedia.org/wikipedia/en/3/32/India_Post.svg" 
+                alt="India Post Logo" 
+                className="h-10 sm:h-14 w-auto bg-white p-1 rounded shadow-sm" 
+              />
             </div>
           </div>
         </div>
@@ -234,20 +243,29 @@ export default function App() {
 
       {/* Footer */}
       <footer className="bg-white border-t border-gray-200 py-6">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <div className="flex items-center gap-2">
-            <div className="w-6 h-6 bg-[#D41217] rounded flex items-center justify-center">
-              <Mail className="text-white" size={14} />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+            <div className="flex items-center gap-2">
+              <div className="w-6 h-6 bg-[#D41217] rounded flex items-center justify-center">
+                <Mail className="text-white" size={14} />
+              </div>
+              <span className="text-sm font-bold text-gray-900">Mail Branch Portal</span>
             </div>
-            <span className="text-sm font-bold text-gray-900">Mail Branch Portal</span>
-          </div>
-          <p className="text-xs text-gray-500">
-            &copy; {new Date().getFullYear()} Department of Posts, India. All rights reserved.
-          </p>
-          <div className="flex gap-6">
-            <a href="#" className="text-xs text-gray-400 hover:text-[#D41217] transition-colors">Privacy Policy</a>
-            <a href="#" className="text-xs text-gray-400 hover:text-[#D41217] transition-colors">Terms of Service</a>
-            <a href="#" className="text-xs text-gray-400 hover:text-[#D41217] transition-colors">Contact Support</a>
+            
+            <div className="text-center">
+              <p className="text-xs text-gray-500">
+                &copy; {new Date().getFullYear()} Department of Posts, India. All rights reserved.
+              </p>
+              <p className="text-[11px] font-bold text-[#D41217] mt-1 uppercase tracking-tight">
+                Prepared by Kalandi Charan Sahoo, OA, DO, Dhenkanal.
+              </p>
+            </div>
+
+            <div className="flex gap-6">
+              <a href="#" className="text-xs text-gray-400 hover:text-[#D41217] transition-colors">Privacy Policy</a>
+              <a href="#" className="text-xs text-gray-400 hover:text-[#D41217] transition-colors">Terms of Service</a>
+              <a href="#" className="text-xs text-gray-400 hover:text-[#D41217] transition-colors">Contact Support</a>
+            </div>
           </div>
         </div>
       </footer>
@@ -261,65 +279,86 @@ interface ResourceCardProps {
   key?: string | number;
 }
 
+const CardThemes = [
+  { bg: 'bg-emerald-50', border: 'border-emerald-100', iconBg: 'bg-emerald-500', text: 'text-emerald-900', iconText: 'text-emerald-50', accent: 'text-emerald-600', hover: 'hover:bg-emerald-100/50' },
+  { bg: 'bg-indigo-50', border: 'border-indigo-100', iconBg: 'bg-indigo-500', text: 'text-indigo-900', iconText: 'text-indigo-50', accent: 'text-indigo-600', hover: 'hover:bg-indigo-100/50' },
+  { bg: 'bg-rose-50', border: 'border-rose-100', iconBg: 'bg-rose-500', text: 'text-rose-900', iconText: 'text-rose-50', accent: 'text-rose-600', hover: 'hover:bg-rose-100/50' },
+  { bg: 'bg-amber-50', border: 'border-amber-100', iconBg: 'bg-amber-500', text: 'text-amber-900', iconText: 'text-amber-50', accent: 'text-amber-600', hover: 'hover:bg-amber-100/50' },
+  { bg: 'bg-sky-50', border: 'border-sky-100', iconBg: 'bg-sky-500', text: 'text-sky-900', iconText: 'text-sky-50', accent: 'text-sky-600', hover: 'hover:bg-sky-100/50' },
+  { bg: 'bg-violet-50', border: 'border-violet-100', iconBg: 'bg-violet-500', text: 'text-violet-900', iconText: 'text-violet-50', accent: 'text-violet-600', hover: 'hover:bg-violet-100/50' },
+  { bg: 'bg-orange-50', border: 'border-orange-100', iconBg: 'bg-orange-500', text: 'text-orange-900', iconText: 'text-orange-50', accent: 'text-orange-600', hover: 'hover:bg-orange-100/50' },
+  { bg: 'bg-teal-50', border: 'border-teal-100', iconBg: 'bg-teal-500', text: 'text-teal-900', iconText: 'text-teal-50', accent: 'text-teal-600', hover: 'hover:bg-teal-100/50' },
+];
+
 function ResourceCard({ card, index }: ResourceCardProps) {
   const Icon = TypeIconMap[card.type || 'generic'];
+  const theme = CardThemes[index % CardThemes.length];
   
   return (
     <motion.div
       initial={{ opacity: 0, x: -20 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ delay: index * 0.05 }}
-      whileHover={{ y: -4 }}
-      className="group bg-white rounded-2xl border border-gray-200 p-5 shadow-sm hover:shadow-md transition-all flex flex-col justify-between"
+      whileHover={{ y: -6, scale: 1.01 }}
+      className={`group ${theme.bg} rounded-3xl border-2 ${theme.border} p-6 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between h-full relative overflow-hidden`}
     >
-      <div className="flex items-start gap-4">
-        <div className={`
-          w-12 h-12 rounded-xl flex items-center justify-center shrink-0 transition-colors
-          ${card.url ? 'bg-red-50 text-[#D41217] group-hover:bg-[#D41217] group-hover:text-white' : 'bg-gray-100 text-gray-400'}
-        `}>
-          <Icon size={24} />
-        </div>
-        <div className="flex-1">
-          <div className="flex items-center gap-2 mb-1">
-            <span className="text-[10px] font-bold uppercase tracking-wider text-gray-400">
+      {/* Decorative background shape */}
+      <div className={`absolute -right-4 -top-4 w-24 h-24 rounded-full ${theme.iconBg} opacity-[0.03] group-hover:scale-150 transition-transform duration-500`} />
+
+      <div className="flex flex-col gap-5">
+        <div className="flex justify-between items-start">
+          <div className={`
+            w-14 h-14 rounded-2xl flex items-center justify-center shrink-0 shadow-lg transition-transform duration-300 group-hover:rotate-6
+            ${card.url ? `${theme.iconBg} ${theme.iconText}` : 'bg-gray-200 text-gray-500'}
+          `}>
+            <Icon size={28} strokeWidth={2.5} />
+          </div>
+          <div className="flex flex-col items-end">
+            <span className={`text-[10px] font-black uppercase tracking-[0.2em] px-2 py-1 rounded-md mb-1 ${card.url ? `${theme.iconBg}/10 ${theme.accent}` : 'bg-gray-200 text-gray-500'}`}>
               {card.type || 'Resource'}
             </span>
-            {card.url && (
-              <span className="w-1 h-1 rounded-full bg-gray-300" />
-            )}
-            {card.url && (
-              <span className="text-[10px] font-bold text-green-600 uppercase tracking-wider">
-                Available
-              </span>
+            {card.url ? (
+              <div className="flex items-center gap-1.5">
+                <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+                <span className="text-[10px] font-bold text-green-700 uppercase tracking-wider">Online</span>
+              </div>
+            ) : (
+              <div className="flex items-center gap-1.5">
+                <div className="w-1.5 h-1.5 rounded-full bg-gray-400" />
+                <span className="text-[10px] font-bold text-gray-500 uppercase tracking-wider">Pending</span>
+              </div>
             )}
           </div>
-          <h3 className="text-lg font-bold text-gray-900 leading-tight group-hover:text-[#D41217] transition-colors">
+        </div>
+
+        <div className="flex-1">
+          <h3 className={`text-xl font-black ${theme.text} leading-[1.1] mb-2 group-hover:translate-x-1 transition-transform`}>
             {card.title}
           </h3>
-          <p className="text-sm text-gray-500 mt-2 line-clamp-2">
-            {card.url ? `Click to open this ${card.type || 'resource'} in a new tab.` : 'This resource is currently being updated or is coming soon.'}
+          <p className={`text-sm ${theme.text} opacity-70 leading-relaxed font-medium`}>
+            {card.url ? `Explore the official ${card.title} data in our secure cloud.` : 'Resource content is currently being prepared for the 2026-27 cycle.'}
           </p>
         </div>
       </div>
 
-      <div className="mt-6 pt-4 border-t border-gray-50 flex items-center justify-between">
+      <div className={`mt-8 pt-5 border-t ${theme.border} flex items-center justify-between`}>
         {card.url ? (
           <a
             href={card.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 text-sm font-bold text-[#D41217] hover:underline"
+            className={`flex items-center gap-2 text-sm font-black ${theme.accent} group/link`}
           >
-            Open Resource
-            <ExternalLink size={14} />
+            <span className="border-b-2 border-transparent group-hover/link:border-current transition-all">Launch Resource</span>
+            <ExternalLink size={16} className="group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
           </a>
         ) : (
-          <span className="text-xs font-medium text-gray-400 italic">
-            Link pending
+          <span className="text-[11px] font-bold text-gray-400 italic">
+            Awaiting Deployment
           </span>
         )}
-        <div className="flex items-center gap-1 text-gray-300">
-          <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform" />
+        <div className={`${theme.accent} opacity-20`}>
+          <ChevronRight size={20} strokeWidth={3} className="group-hover:translate-x-2 transition-transform duration-300" />
         </div>
       </div>
     </motion.div>
