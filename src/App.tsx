@@ -23,7 +23,8 @@ import {
   File as FileIcon,
   Youtube,
   FolderOpen,
-  Info
+  Info,
+  GraduationCap
 } from 'lucide-react';
 import { SECTIONS, Section, CardLink } from './types';
 
@@ -110,6 +111,15 @@ export default function App() {
             </div>
 
             <div className="flex items-center gap-4">
+              <a 
+                href="https://dakshiksha.netlify.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hidden md:flex items-center gap-2 bg-[#FFD700] text-[#D41217] px-4 py-2 rounded-lg font-bold text-sm shadow-md hover:bg-white hover:scale-105 transition-all"
+              >
+                <GraduationCap size={18} />
+                DakShikha
+              </a>
               <div className="hidden sm:block text-right">
                 <p className="text-[10px] font-medium text-red-100 uppercase tracking-tighter">Department of Posts</p>
                 <p className="text-sm font-bold truncate max-w-[120px]">DO Dhenkanal</p>
@@ -170,6 +180,19 @@ export default function App() {
                 </button>
               );
             })}
+            
+            <div className="px-4 mt-6 mb-2">
+              <p className="text-[10px] uppercase tracking-widest text-gray-400 font-bold">Portals</p>
+            </div>
+            <a
+              href="https://dakshiksha.netlify.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full flex items-center gap-3 px-4 py-3 text-sm font-bold text-gray-600 hover:bg-red-50 hover:text-[#D41217] transition-all"
+            >
+              <GraduationCap size={18} className="text-gray-400" />
+              DakShikha Home
+            </a>
           </nav>
           <div className="p-4 bg-gray-50 border-t border-gray-200">
             <div className="flex items-center gap-2 text-[10px] text-gray-500 font-medium">
